@@ -12,7 +12,7 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.socials}>
-                    <a href="#" aria-label="Instagram">
+                    <a href="https://www.instagram.com/pristinebarbers_/" aria-label="Instagram">
                         <img src="/Instagram.webp" alt="Instagram" />
                     </a>
                     <a href="#" aria-label="Facebook">
