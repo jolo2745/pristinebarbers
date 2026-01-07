@@ -1,0 +1,80 @@
+/* Page wrapper */
+.tipsPage {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 5rem;
+    color: #1a1a1a;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.hero h1 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: #1a1a1a;
+    margin: 1rem auto 0;
+    opacity: 0.7;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 1.5rem auto 0;
+    color: #6b6b6b;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+/* Content */
+.content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Individual tip */
+.tip {
+    margin-bottom: 2.25rem;
+}
+
+.tip h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.tip p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .tipsPage {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .tip h2 {
+        font-size: 1.25rem;
+    }
+
+    .tip p {
+        font-size: 0.95rem;
+    }
+}

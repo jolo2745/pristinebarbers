@@ -1,0 +1,132 @@
+.pricesSection {
+    padding: 90px 24px;
+    background: linear-gradient(to bottom, #f6f6f6, #ededed);
+    text-align: center;
+}
+
+/* HEADER */
+.heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin-bottom: 12px;
+}
+
+.divider {
+    width: 70px;
+    height: 3px;
+    margin: 0 auto 70px;
+    background: #1d1d1d;
+    opacity: 0.8;
+}
+
+/* MAIN BLOCK */
+.pricesLayout {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* REVERSED BLOCK */
+.reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+}
+
+.reverse .priceList {
+    order: 2;
+}
+
+.reverse .imageWrap {
+    order: 1;
+}
+
+/* PRICE LIST */
+.priceList {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.priceRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 28px;
+    border-radius: 12px;
+
+    background: linear-gradient(to right,
+            #5f5f5f,
+            #3f3f3f);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.price {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* IMAGE */
+.imageWrap {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    min-height: 460px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.18);
+
+    background: #000;
+}
+
+
+.image {
+    object-fit: cover;
+}
+
+/* FINAL TWO */
+.finalServices {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding-top: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    .pricesLayout,
+    .reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .priceList,
+    .imageWrap {
+        order: unset;
+    }
+
+    .imageWrap {
+        min-height: 320px;
+    }
+
+    .finalServices {
+        grid-template-columns: 1fr;
+    }
+}

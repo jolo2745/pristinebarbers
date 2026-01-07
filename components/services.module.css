@@ -1,0 +1,114 @@
+.container {
+    width: 100%;
+    /* FORCE half-screen height */
+    padding: 0 1.5rem;
+    /* remove big vertical padding */
+    color: #111;
+    background: #f3f3f3;
+    padding-top: 4rem;
+    /* add space above the title */
+
+    display: flex;
+    /* center everything vertically */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-size: 2.5rem;
+    /* slightly smaller so it fits */
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+    /* reduce spacing */
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    width: 100px;
+    height: 2px;
+    background: #3a3a3a;
+    border-radius: 10px;
+    display: block;
+    margin: 0.8rem auto 0 auto;
+}
+
+/* Grid */
+.grid {
+    width: 70%;
+    /* EXACT half screen width */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    /* smaller gap so it fits vertically */
+}
+
+/* Cards */
+.serviceCard {
+    background: #fff;
+    border-radius: 18px;
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.20);
+
+    display: flex;
+    /* <-- horizontal layout */
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.2rem;
+    /* space between icon + text */
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.serviceCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Icon box */
+.iconBox {
+    width: 120px;
+    height: 120px;
+    background: #f1f1f1;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.icon {
+    width: 85%;
+    height: 65%;
+    object-fit: contain;
+}
+
+/* Name + price */
+.name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.price {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Mobile fallback */
+@media (max-width: 900px) {
+    .container {
+        height: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    .grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+}

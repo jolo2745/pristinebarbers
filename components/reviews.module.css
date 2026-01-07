@@ -1,0 +1,213 @@
+/* ============================
+   CONTAINER
+============================ */
+.container {
+    width: 100%;
+    padding: 6rem 1.5rem;
+    background: #f3f3f3;
+    text-align: center;
+}
+
+/* ============================
+   TITLE
+============================ */
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    width: 140px;
+    height: 3px;
+    background: #3a3a3a;
+    border-radius: 10px;
+    display: block;
+    margin: 1rem auto 0 auto;
+}
+
+/* ============================
+   DESKTOP SCROLLER
+============================ */
+.scroller {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    margin-bottom: 3rem;
+}
+
+/* Fade edges */
+.scroller::before,
+.scroller::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+.scroller::before {
+    left: 0;
+    background: linear-gradient(to right, #f3f3f3, transparent);
+}
+
+.scroller::after {
+    right: 0;
+    background: linear-gradient(to left, #f3f3f3, transparent);
+}
+
+.reviewStars {
+    color: #f5b400;
+    /* Google gold */
+    font-weight: 700;
+}
+
+/* Scroller content */
+.inner {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scroll 35s linear infinite;
+}
+
+/* Review tile */
+.review {
+    flex-shrink: 0;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    padding: 1.2rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Infinite scroll animation */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ============================
+   AVERAGE RATING
+============================ */
+.summaryBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.average {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.average span {
+    color: #f5b400;
+}
+
+.googleLink {
+    font-size: 1.1rem;
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.googleLink:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   MOBILE STACKED REVIEWS (hidden on desktop)
+============================ */
+.mobileReviews {
+    display: none;
+}
+
+.mobileReviewCard {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.mobileStars {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #f5b400;
+}
+
+.mobileText {
+    margin-top: 0.3rem;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* ============================
+   MOBILE BREAKPOINT
+============================ */
+@media (max-width: 768px) {
+
+    /* Hide desktop scroller */
+    .scroller {
+        display: none;
+    }
+
+    /* Show mobile stacked reviews */
+    .mobileReviews {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    /* Mobile title sizing */
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .title::after {
+        width: 80px;
+        height: 2px;
+        margin-top: 0.5rem;
+    }
+
+    /* Smaller fade zones */
+    .scroller::before,
+    .scroller::after {
+        width: 50px;
+    }
+
+    /* Summary layout */
+    .summaryBox {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .average {
+        font-size: 1.2rem;
+    }
+
+    .googleLink {
+        font-size: 0.95rem;
+    }
+}
