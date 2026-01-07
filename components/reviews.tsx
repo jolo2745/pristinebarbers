@@ -45,7 +45,7 @@ const Reviews = () => {
                     ⭐ <strong>4.9</strong> average rating
                 </p>
                 <a
-                    href="https://www.google.com"
+                    href="https://www.google.com/search?sca_esv=189c82b39954af99&rlz=1CAVUMJ_enGB1078&sxsrf=ANbL-n7EixKPWqKsTXXtkZik57v8WVZEsQ:1767829150826&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOU7Ca7-2HNOJPTv3KykL_3GOm0c4XH_2PdcUbDvwInEjMoem--LwEpktRxXuXlQqZaAF51k_uoA9lvPoaRDsFSwM5Z83YHyKdedLHjCNgWP4HMjE-g%3D%3D&q=Pristine+barbers+Reviews&sa=X&ved=2ahUKEwjb3bvkzPqRAxV-YEEAHXF0DiwQ0bkNegQIIRAD&biw=1616&bih=909&dpr=1.19&aic=0"
                     target="_blank"
                     className={styles.googleLink}
                 >
