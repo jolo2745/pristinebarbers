@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 export const metadata = {
     title: "Barber Website",
     description: "Professional barber website",
+    themeColor: "#000000",
 };
 
 export default function RootLayout({
