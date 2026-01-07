@@ -1,11 +1,11 @@
 import styles from "./reviews.module.css";
 
 const reviewList = [
-    "“Best fade I’ve ever had.” – James",
-    "“Super clean shop, amazing service.” – Amir",
-    "“My go-to barber every month.” – Lewis",
-    "“Perfect skin fade every single time.” – Daniel",
-    "“Friendly staff and great atmosphere.” – Ruben",
+    "“Erdi does a great job every time ” – Sam ",
+    "“Outstanding barbers great lads and good vibes and unreal trims 5 stars all round” – Brook ",
+    "“10/10 taper fade, easy to book fast and efficient. Highly recommend!” – Aaron ",
+    "“Couldn’t ask for a better service.” – Dave",
+    "“Best barber about, been coming to Erdi for years” – Theo",
 ];
 
 const Reviews = () => {

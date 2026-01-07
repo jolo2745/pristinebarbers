@@ -4,7 +4,7 @@ import styles from "./services.module.css";
 const Services: React.FC = () => {
     return (
         <section className={styles.container}>
-            <h2 className={styles.title}>Our Services</h2>
+            <h2 className={styles.title}>Our Popular Services</h2>
 
             <div className={styles.grid}>
 
