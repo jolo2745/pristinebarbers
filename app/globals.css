@@ -20,7 +20,7 @@ body {
     min-height: 100%;
     overflow-x: hidden;
     /* force no horizontal scroll */
-    background-color: #eee;
+    background-color: #000;
     color: white;
     -webkit-font-smoothing: antialiased;
 }
