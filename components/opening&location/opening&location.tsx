@@ -23,12 +23,12 @@ export default function OpeningAndLocation() {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>9am – 7pm</td>
-                            <td>9am – 7pm</td>
-                            <td>9am – 7pm</td>
-                            <td>9am – 7pm</td>
-                            <td>9am – 8pm</td>
-                            <td>9am – 7pm</td>
+                            <td>9am – 7:15pm</td>
+                            <td>9am – 7:15pm</td>
+                            <td>9am – 7:15pm</td>
+                            <td>9am – 7:15pm</td>
+                            <td>9am – 8:15pm</td>
+                            <td>9am – 7:15pm</td>
                             <td>10am – 5pm</td>
                         </tr>
                     </tbody>
@@ -37,13 +37,13 @@ export default function OpeningAndLocation() {
 
             {/* Mobile List */}
             <div className={styles.mobileList}>
-                <div className={styles.mobileRow}><span>Mon</span><span>9am – 6pm</span></div>
-                <div className={styles.mobileRow}><span>Tue</span><span>9am – 6pm</span></div>
-                <div className={styles.mobileRow}><span>Wed</span><span>9am – 6pm</span></div>
-                <div className={styles.mobileRow}><span>Thu</span><span>9am – 7pm</span></div>
-                <div className={styles.mobileRow}><span>Fri</span><span>9am – 7pm</span></div>
-                <div className={styles.mobileRow}><span>Sat</span><span>9am – 5pm</span></div>
-                <div className={styles.mobileRow}><span>Sun</span><span>Closed</span></div>
+                <div className={styles.mobileRow}><span>Mon</span><span>9am – 7:15pm</span></div>
+                <div className={styles.mobileRow}><span>Tue</span><span>9am – 7:15pm</span></div>
+                <div className={styles.mobileRow}><span>Wed</span><span>9am – 7:15pm</span></div>
+                <div className={styles.mobileRow}><span>Thu</span><span>9am – 7:15pm</span></div>
+                <div className={styles.mobileRow}><span>Fri</span><span>9am – 8:15pm</span></div>
+                <div className={styles.mobileRow}><span>Sat</span><span>9am – 7:15pm</span></div>
+                <div className={styles.mobileRow}><span>Sun</span><span>10am – 5pm</span></div>
             </div>
 
             {/* FIND US SECTION */}
