@@ -65,7 +65,8 @@ export default function RootLayout({
                             "@id": "https://pristinebarbers.co.uk/#barbershop",
                             name: "Pristine Barbers",
                             url: "https://pristinebarbers.co.uk",
-                            telephone: "+44 12020 96887",
+                            telephone: "+441202096887",
+                            priceRange: "££",
                             address: {
                                 "@type": "PostalAddress",
                                 streetAddress: "164 Charminster Road",
