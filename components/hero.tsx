@@ -5,9 +5,9 @@ export default function Hero() {
     return (
         <section className={styles.hero}>
             <div className={styles.overlay}>
-                <h1 className={styles.title}>Professional Barber. Modern Styles.</h1>
+                <h1 className={styles.title}>Pristine Barbers in Bournemouth</h1>
                 <p className={styles.subtitle}>
-                    A friendly and welcoming environment, with experience in all hair types.
+                    A friendly environment, with experience in all hair types.
                 </p>
 
                 <a

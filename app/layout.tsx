@@ -46,13 +46,108 @@ export default function RootLayout({
                 />
                 <Script id="ga" strategy="afterInteractive">
                     {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-4L0XPHN2FH');
-          `}
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4L0XPHN2FH');
+    `}
                 </Script>
+
+                {/* Local Business + Reviews Schema */}
+                <Script
+                    id="local-business-schema"
+                    type="application/ld+json"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BarberShop",
+                            "@id": "https://pristinebarbers.co.uk/#barbershop",
+                            name: "Pristine Barbers",
+                            url: "https://pristinebarbers.co.uk",
+                            telephone: "+44 12020 96887",
+                            address: {
+                                "@type": "PostalAddress",
+                                streetAddress: "164 Charminster Road",
+                                addressLocality: "Bournemouth",
+                                addressRegion: "Dorset",
+                                postalCode: "BH8 8UX",
+                                addressCountry: "GB"
+                            },
+                            openingHoursSpecification: [
+                                {
+                                    "@type": "OpeningHoursSpecification",
+                                    dayOfWeek: [
+                                        "Monday",
+                                        "Tuesday",
+                                        "Wednesday",
+                                        "Thursday"
+                                    ],
+                                    opens: "09:00",
+                                    closes: "19:15"
+                                },
+
+                                {
+                                    "@type": "OpeningHoursSpecification",
+                                    dayOfWeek: "Friday",
+                                    opens: "09:00",
+                                    closes: "20:15"
+                                },
+
+                                {
+                                    "@type": "OpeningHoursSpecification",
+                                    dayOfWeek: "Saturday",
+                                    opens: "09:00",
+                                    closes: "19:15"
+                                },
+
+                                {
+                                    "@type": "OpeningHoursSpecification",
+                                    dayOfWeek: "Sunday",
+                                    opens: "10:00",
+                                    closes: "17:00"
+                                }
+
+                            ],
+                            aggregateRating: {
+                                "@type": "AggregateRating",
+                                ratingValue: "4.9",
+                                reviewCount: "80"
+                            },
+                            review: [
+                                {
+                                    "@type": "Review",
+                                    author: {
+                                        "@type": "Person",
+                                        name: "Sam"
+                                    },
+                                    reviewRating: {
+                                        "@type": "Rating",
+                                        ratingValue: "5",
+                                        bestRating: "5"
+                                    },
+                                    reviewBody: "Erdi does a great job every time."
+                                },
+                                {
+                                    "@type": "Review",
+                                    author: {
+                                        "@type": "Person",
+                                        name: "Aaron"
+                                    },
+                                    reviewRating: {
+                                        "@type": "Rating",
+                                        ratingValue: "5",
+                                        bestRating: "5"
+                                    },
+                                    reviewBody:
+                                        "10/10 taper fade, easy to book, fast and efficient. Highly recommend."
+                                }
+                            ]
+                        })
+                    }}
+                />
             </head>
+
 
             <body suppressHydrationWarning={true}>
                 <Navbar />
