@@ -5,10 +5,31 @@ import type { ReactNode } from "react";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Barber Website",
-    description: "Professional barber website",
+    title: {
+        default: "Pristine Barbers | Bournemouth",
+        template: "%s | Pristine Barbers",
+    },
+    description:
+        "Pristine Barbers is a modern barbershop in Bournemouth offering haircuts, fades, beard trims and professional grooming.",
     themeColor: "#000000",
+    openGraph: {
+        title: "Pristine Barbers | Barber Shop in Bournemouth",
+        description:
+            "Modern barbershop in Bournemouth specialising in precision cuts, skin fades and grooming.",
+        url: "https://pristinebarbers.co.uk",
+        siteName: "Pristine Barbers",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Pristine Barbers Bournemouth barbershop",
+            },
+        ],
+        type: "website",
+    },
 };
+
 
 export default function RootLayout({
     children,
