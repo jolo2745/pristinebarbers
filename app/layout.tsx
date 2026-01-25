@@ -12,6 +12,17 @@ export const metadata = {
     description:
         "Pristine Barbers is a modern barbershop in Bournemouth offering haircuts, fades, beard trims and professional grooming.",
     themeColor: "#000000",
+
+    icons: {
+        icon: [
+            {
+                url: "/favicon.png",
+                type: "image/png",
+                sizes: "64x64",
+            },
+        ],
+    },
+
     openGraph: {
         title: "Pristine Barbers | Barber Shop in Bournemouth",
         description:
@@ -29,6 +40,7 @@ export const metadata = {
         type: "website",
     },
 };
+
 
 
 export default function RootLayout({
