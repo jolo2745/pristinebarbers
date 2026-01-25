@@ -124,8 +124,8 @@ export default function RootLayout({
                             ],
                             aggregateRating: {
                                 "@type": "AggregateRating",
-                                ratingValue: "4.9",
-                                reviewCount: "80"
+                                ratingValue: 4.9,
+                                reviewCount: 80
                             },
                             review: [
                                 {
@@ -136,8 +136,8 @@ export default function RootLayout({
                                     },
                                     reviewRating: {
                                         "@type": "Rating",
-                                        ratingValue: "5",
-                                        bestRating: "5"
+                                        ratingValue: 5,
+                                        bestRating: 5
                                     },
                                     reviewBody: "Erdi does a great job every time."
                                 },
@@ -149,8 +149,8 @@ export default function RootLayout({
                                     },
                                     reviewRating: {
                                         "@type": "Rating",
-                                        ratingValue: "5",
-                                        bestRating: "5"
+                                        ratingValue: 5,
+                                        bestRating: 5
                                     },
                                     reviewBody:
                                         "10/10 taper fade, easy to book, fast and efficient. Highly recommend."
