@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import type { ReactNode } from "react";
 import Script from "next/script";
+import { url } from "inspector";
 
 export const metadata = {
     title: {
@@ -15,6 +16,10 @@ export const metadata = {
 
     icons: {
         icon: [
+            {
+                url: "/favicon.ico",
+                type: "image/x-icon",
+            },
             {
                 url: "/favicon.png",
                 type: "image/png",
