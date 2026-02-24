@@ -10,6 +10,15 @@ const BOOKSY_URL =
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const handleBookClick = () => {
+        if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("event", "book_click", {
+                event_category: "engagement",
+                event_label: "Navbar Book Now",
+            });
+        }
+    };
+
     return (
         <>
             {/* NAVBAR */}
@@ -31,6 +40,7 @@ export default function Navbar() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.bookBtn}
+                            onClick={handleBookClick}
                         >
                             Book Now
                         </a>
@@ -76,6 +86,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.floatingBookBtn}
+                onClick={handleBookClick}
             >
                 Book Now
             </a>

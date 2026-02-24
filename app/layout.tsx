@@ -63,11 +63,12 @@ export default function RootLayout({
                 />
                 <Script id="ga" strategy="afterInteractive">
                     {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4L0XPHN2FH');
-    `}
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-4L0XPHN2FH');
+  `}
                 </Script>
 
                 {/* Local Business + Reviews Schema */}
