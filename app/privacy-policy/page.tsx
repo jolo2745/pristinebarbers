@@ -1,5 +1,12 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "Privacy Policy",
+    description:
+        "Privacy policy for the Pristine Barbers website and analytics usage.",
+    alternates: {
+        canonical: "/privacy-policy",
+    },
 };
 
 export default function PrivacyPolicyPage() {

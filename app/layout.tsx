@@ -3,17 +3,29 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import type { ReactNode } from "react";
 import Script from "next/script";
-import { url } from "inspector";
+import type { Metadata } from "next";
+import {
+    ADDRESS,
+    BOOKSY_URL,
+    INSTAGRAM_URL,
+    PHONE_E164,
+    SITE_NAME,
+    SITE_URL,
+    defaultMetadata,
+    defaultOpenGraphImage,
+} from "./lib/site";
 
-export const metadata = {
+export const metadata: Metadata = {
+    metadataBase: new URL(SITE_URL),
     title: {
-        default: "Pristine Barbers | Bournemouth",
-        template: "%s | Pristine Barbers",
+        default: `${SITE_NAME} | Bournemouth`,
+        template: `%s | ${SITE_NAME}`,
     },
-    description:
-        "Pristine Barbers is a modern barbershop in Bournemouth offering haircuts, fades, beard trims and professional grooming.",
+    description: defaultMetadata.description,
     themeColor: "#000000",
-
+    alternates: {
+        canonical: "/",
+    },
     icons: {
         icon: [
             {
@@ -29,20 +41,19 @@ export const metadata = {
     },
 
     openGraph: {
-        title: "Pristine Barbers | Barber Shop in Bournemouth",
-        description:
-            "Modern barbershop in Bournemouth specialising in precision cuts, skin fades and grooming.",
-        url: "https://pristinebarbers.co.uk",
-        siteName: "Pristine Barbers",
-        images: [
-            {
-                url: "/og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Pristine Barbers Bournemouth barbershop",
-            },
-        ],
+        title: `${SITE_NAME} | Barber Shop in Bournemouth`,
+        description: defaultMetadata.description,
+        url: SITE_URL,
+        siteName: SITE_NAME,
+        images: [defaultOpenGraphImage],
         type: "website",
+        locale: "en_GB",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${SITE_NAME} | Barber Shop in Bournemouth`,
+        description: defaultMetadata.description,
+        images: [defaultOpenGraphImage.url],
     },
 };
 
@@ -80,10 +91,11 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "BarberShop",
-                            "@id": "https://pristinebarbers.co.uk/#barbershop",
-                            name: "Pristine Barbers",
-                            url: "https://pristinebarbers.co.uk",
-                            telephone: "+441202096887",
+                            "@id": `${SITE_URL}/#barbershop`,
+                            name: SITE_NAME,
+                            url: SITE_URL,
+                            image: `${SITE_URL}${defaultOpenGraphImage.url}`,
+                            telephone: PHONE_E164,
                             priceRange: "££",
                             address: {
                                 "@type": "PostalAddress",
@@ -91,7 +103,41 @@ export default function RootLayout({
                                 addressLocality: "Bournemouth",
                                 addressRegion: "Dorset",
                                 postalCode: "BH8 8UX",
-                                addressCountry: "GB"
+                                addressCountry: "GB",
+                            },
+                            sameAs: [INSTAGRAM_URL],
+                            areaServed: [
+                                "Bournemouth",
+                                "Charminster",
+                                "Boscombe",
+                                "Winton",
+                            ],
+                            makesOffer: [
+                                {
+                                    "@type": "Offer",
+                                    itemOffered: {
+                                        "@type": "Service",
+                                        name: "Skin Fade",
+                                    },
+                                },
+                                {
+                                    "@type": "Offer",
+                                    itemOffered: {
+                                        "@type": "Service",
+                                        name: "Haircut",
+                                    },
+                                },
+                                {
+                                    "@type": "Offer",
+                                    itemOffered: {
+                                        "@type": "Service",
+                                        name: "Beard Trim",
+                                    },
+                                },
+                            ],
+                            potentialAction: {
+                                "@type": "ReserveAction",
+                                target: BOOKSY_URL,
                             },
                             openingHoursSpecification: [
                                 {
@@ -128,7 +174,12 @@ export default function RootLayout({
                                 }
 
                             ],
-
+                            description: defaultMetadata.description,
+                            slogan: "Modern barbershop on Charminster Road in Bournemouth",
+                            location: {
+                                "@type": "Place",
+                                address: ADDRESS,
+                            },
                         })
                     }}
                 />

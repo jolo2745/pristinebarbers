@@ -3,9 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./navbar.module.css";
-
-const BOOKSY_URL =
-    "https://booksy.com/en-gb/128944_pristine-barbers_barber_1029122_bournemouth";
+import { BOOKSY_URL } from "@/app/lib/site";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);

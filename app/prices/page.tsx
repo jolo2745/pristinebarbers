@@ -1,5 +1,15 @@
 import styles from "./prices.module.css";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Prices",
+    description:
+        "See haircut, skin fade, beard trim and grooming prices at Pristine Barbers in Bournemouth before you book.",
+    alternates: {
+        canonical: "/prices",
+    },
+};
 
 const pricesItems = [
     { title: "Skinfade/taper fade, cut and style", price: "£20" },

@@ -1,6 +1,16 @@
 import Link from "next/link";
 import styles from "./info.module.css";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Info",
+    description:
+        "Learn more about Pristine Barbers in Bournemouth, including the shop story, grooming advice and updates.",
+    alternates: {
+        canonical: "/info",
+    },
+};
 
 export default function InfoPage() {
     return (

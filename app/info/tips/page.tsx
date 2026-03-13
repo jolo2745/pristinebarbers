@@ -1,4 +1,14 @@
 import styles from "./tips.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Hair Tips",
+    description:
+        "Practical hair and beard grooming tips from the team at Pristine Barbers in Bournemouth.",
+    alternates: {
+        canonical: "/info/tips",
+    },
+};
 
 export default function TipsPage() {
     return (

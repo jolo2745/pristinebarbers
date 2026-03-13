@@ -1,4 +1,14 @@
 import styles from "./story.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Our Story",
+    description:
+        "Read the story behind Pristine Barbers and the standards that shape the shop in Bournemouth.",
+    alternates: {
+        canonical: "/info/story",
+    },
+};
 
 export default function StoryPage() {
     return (

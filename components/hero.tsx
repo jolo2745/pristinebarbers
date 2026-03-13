@@ -1,6 +1,6 @@
 import styles from "./hero.module.css";
-import Link from "next/link";
 import Image from "next/image";
+import { BOOKSY_URL } from "@/app/lib/site";
 
 
 export default function Hero() {
@@ -23,7 +23,7 @@ export default function Hero() {
                 </p>
 
                 <a
-                    href="https://booksy.com/en-gb/128944_pristine-barbers_barber_1029122_bournemouth"
+                    href={BOOKSY_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.button}

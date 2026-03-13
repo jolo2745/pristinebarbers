@@ -1,30 +1,28 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "./lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://pristinebarbers.co.uk",
-      lastModified: new Date(),
+      url: SITE_URL,
     },
     {
-      url: "https://pristinebarbers.co.uk/prices",
-      lastModified: new Date(),
+      url: `${SITE_URL}/prices`,
     },
     {
-      url: "https://pristinebarbers.co.uk/info",
-      lastModified: new Date(),
+      url: `${SITE_URL}/info`,
     },
     {
-      url: "https://pristinebarbers.co.uk/info/story",
-      lastModified: new Date(),
+      url: `${SITE_URL}/info/story`,
     },
     {
-      url: "https://pristinebarbers.co.uk/info/blog",
-      lastModified: new Date(),
+      url: `${SITE_URL}/info/blog`,
     },
     {
-      url: "https://pristinebarbers.co.uk/info/tips",
-      lastModified: new Date(),
+      url: `${SITE_URL}/info/tips`,
+    },
+    {
+      url: `${SITE_URL}/privacy-policy`,
     },
   ];
 }

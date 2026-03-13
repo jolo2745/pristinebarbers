@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./footer.module.css";
+import { ADDRESS, INSTAGRAM_URL, PHONE_DISPLAY } from "@/app/lib/site";
 
 export default function Footer() {
     return (
@@ -10,22 +12,22 @@ export default function Footer() {
                 <div className={styles.left}>
 
                     <div className={styles.info}>
-                        <p>📍 164 Charminster Rd, Bournemouth BH8 8UX, United Kingdom</p>
-                        <p>📞 +44 12020 96887</p>
+                        <p>📍 {ADDRESS}</p>
+                        <p>📞 {PHONE_DISPLAY}</p>
                     </div>
 
                     <div className={styles.socials}>
                         <a
-                            href="https://www.instagram.com/pristinebarbers_/"
+                            href={INSTAGRAM_URL}
                             aria-label="Instagram"
                         >
-                            <img src="/Instagram.webp" alt="Instagram" />
+                            <Image src="/Instagram.webp" alt="Instagram" width={32} height={32} />
                         </a>
                         <a href="#" aria-label="Facebook">
-                            <img src="/Facebook.webp" alt="Facebook" />
+                            <Image src="/Facebook.webp" alt="Facebook" width={32} height={32} />
                         </a>
                         <a href="#" aria-label="TikTok">
-                            <img src="/TikTok.webp" alt="TikTok" />
+                            <Image src="/TikTok.webp" alt="TikTok" width={32} height={32} />
                         </a>
                     </div>
                 </div>

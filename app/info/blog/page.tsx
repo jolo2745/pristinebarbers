@@ -1,4 +1,14 @@
 import styles from "./blog.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Barber Blog",
+    description:
+        "Updates and barbering insights from Pristine Barbers in Bournemouth.",
+    alternates: {
+        canonical: "/info/blog",
+    },
+};
 
 export default function BlogPage() {
     return (
