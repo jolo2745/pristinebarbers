@@ -1,6 +1,7 @@
 import styles from "./prices.module.css";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { formatPrice, servicePrices } from "../lib/services";
 
 export const metadata: Metadata = {
     title: "Prices",
@@ -11,29 +12,6 @@ export const metadata: Metadata = {
     },
 };
 
-const pricesItems = [
-    { title: "Skinfade/taper fade, cut and style", price: "£20" },
-    { title: "Skingfade/taper and beard trim/shape", price: "£30" },
-    { title: "Standard haircut and style", price: "£16" },
-    { title: "BU student fade", price: "£17" },
-    { title: "Standard haircut with beard trim/shape", price: "£26" },
-
-    { title: "Beard trim and shape up", price: "£10" },
-    { title: "Full works", price: "£37" },
-    { title: "Hot towel wet shave", price: "£15" },
-    { title: "Nose and ears waxed", price: "£5" },
-    { title: "One grade all over/head shave", price: "£10" },
-
-    { title: "OAP clipper cut", price: "£10" },
-    { title: "Scissor cut", price: "£17" },
-    { title: "OAP scissor cut", price: "£12" },
-    { title: "Restyle", price: "£25" },
-    { title: "Kids skin fade under 12", price: "£15" },
-
-    { title: "Kids standard haircut under 12", price: "£12" },
-    { title: "Head shave and beawrd trim/shape", price: "£22" },
-];
-
 const images = [
     "/blond.webp",
     "/brunet.webp",
@@ -41,14 +19,14 @@ const images = [
 ];
 
 // utility
-const chunkArray = (arr: typeof pricesItems, size: number) =>
+const chunkArray = (arr: readonly (typeof servicePrices)[number][], size: number) =>
     Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
         arr.slice(i * size, i * size + size)
     );
 
 export default function PricesPage() {
-    const mainBlocks = chunkArray(pricesItems.slice(0, 15), 5);
-    const extras = pricesItems.slice(15);
+    const mainBlocks = chunkArray(servicePrices.slice(0, 15), 5);
+    const extras = servicePrices.slice(15);
 
     return (
         <section className={styles.pricesSection}>
@@ -70,7 +48,7 @@ export default function PricesPage() {
                                     {item.title}
                                 </span>
                                 <span className={styles.price}>
-                                    {item.price}
+                                    {formatPrice(item.price)}
                                 </span>
                             </div>
                         ))}
@@ -97,7 +75,7 @@ export default function PricesPage() {
                             {item.title}
                         </span>
                         <span className={styles.price}>
-                            {item.price}
+                            {formatPrice(item.price)}
                         </span>
                     </div>
                 ))}
