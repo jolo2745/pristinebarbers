@@ -74,7 +74,7 @@
     display: flex;
     gap: 1.5rem;
     width: max-content;
-    animation: scroll 35s linear infinite;
+    animation: scroll 35s ease-in-out infinite alternate;
 }
 
 /* Review tile */
@@ -89,14 +89,14 @@
     color: #333;
 }
 
-/* Infinite scroll animation */
+/* Keep every review visible while moving one semantic list across the viewport. */
 @keyframes scroll {
     from {
         transform: translateX(0);
     }
 
     to {
-        transform: translateX(-50%);
+        transform: translateX(calc(-100% + 100vw - 3rem));
     }
 }
 
@@ -133,50 +133,42 @@
 }
 
 /* ============================
-   MOBILE STACKED REVIEWS (hidden on desktop)
-============================ */
-.mobileReviews {
-    display: none;
-}
-
-.mobileReviewCard {
-    background: #ffffff;
-    border: 1px solid #e6e6e6;
-    padding: 1rem 1.2rem;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    text-align: left;
-}
-
-.mobileStars {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #f5b400;
-}
-
-.mobileText {
-    margin-top: 0.3rem;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.4;
-}
-
-/* ============================
    MOBILE BREAKPOINT
 ============================ */
 @media (max-width: 768px) {
 
-    /* Hide desktop scroller */
     .scroller {
+        overflow: visible;
+        white-space: normal;
+    }
+
+    .scroller::before,
+    .scroller::after {
         display: none;
     }
 
-    /* Show mobile stacked reviews */
-    .mobileReviews {
+    .inner {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin-top: 1.5rem;
+        width: 100%;
+        animation: none;
+    }
+
+    .review {
+        padding: 1rem 1.2rem;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        text-align: left;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .reviewStars {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-size: 1.1rem;
     }
 
     /* Mobile title sizing */
@@ -189,12 +181,6 @@
         width: 80px;
         height: 2px;
         margin-top: 0.5rem;
-    }
-
-    /* Smaller fade zones */
-    .scroller::before,
-    .scroller::after {
-        width: 50px;
     }
 
     /* Summary layout */

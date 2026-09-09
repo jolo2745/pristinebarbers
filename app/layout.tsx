@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import {
     ADDRESS,
     BOOKSY_URL,
+    GOOGLE_BUSINESS_URL,
     INSTAGRAM_URL,
     PHONE_E164,
     SITE_NAME,
@@ -14,6 +15,7 @@ import {
     defaultMetadata,
     defaultOpenGraphImage,
 } from "./lib/site";
+import { servicePrices } from "./lib/services";
 
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
@@ -82,11 +84,10 @@ export default function RootLayout({
   `}
                 </Script>
 
-                {/* Local Business + Reviews Schema */}
-                <Script
+                {/* Local business identity data; rendered without changing the page. */}
+                <script
                     id="local-business-schema"
                     type="application/ld+json"
-                    strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
@@ -97,6 +98,7 @@ export default function RootLayout({
                             image: `${SITE_URL}${defaultOpenGraphImage.url}`,
                             telephone: PHONE_E164,
                             priceRange: "££",
+                            currenciesAccepted: "GBP",
                             address: {
                                 "@type": "PostalAddress",
                                 streetAddress: "164 Charminster Road",
@@ -105,36 +107,28 @@ export default function RootLayout({
                                 postalCode: "BH8 8UX",
                                 addressCountry: "GB",
                             },
-                            sameAs: [INSTAGRAM_URL],
+                            sameAs: [GOOGLE_BUSINESS_URL, INSTAGRAM_URL, BOOKSY_URL],
+                            hasMap: GOOGLE_BUSINESS_URL,
+                            geo: {
+                                "@type": "GeoCoordinates",
+                                latitude: 50.75923032163861,
+                                longitude: -1.8574144789505662,
+                            },
                             areaServed: [
                                 "Bournemouth",
                                 "Charminster",
                                 "Boscombe",
                                 "Winton",
                             ],
-                            makesOffer: [
-                                {
-                                    "@type": "Offer",
-                                    itemOffered: {
-                                        "@type": "Service",
-                                        name: "Skin Fade",
-                                    },
+                            makesOffer: servicePrices.map((service) => ({
+                                "@type": "Offer",
+                                price: service.price,
+                                priceCurrency: "GBP",
+                                itemOffered: {
+                                    "@type": "Service",
+                                    name: service.title,
                                 },
-                                {
-                                    "@type": "Offer",
-                                    itemOffered: {
-                                        "@type": "Service",
-                                        name: "Haircut",
-                                    },
-                                },
-                                {
-                                    "@type": "Offer",
-                                    itemOffered: {
-                                        "@type": "Service",
-                                        name: "Beard Trim",
-                                    },
-                                },
-                            ],
+                            })),
                             potentialAction: {
                                 "@type": "ReserveAction",
                                 target: BOOKSY_URL,
